@@ -73,7 +73,7 @@ myModMask :: KeyMask
 myModMask = mod4Mask        -- Sets modkey to super/windows key
 
 myTerminal :: String
-myTerminal = "st"    -- Sets default terminal
+myTerminal = "alacritty"    -- Sets default terminal
 
 myBrowser :: String
 myBrowser = "qutebrowser "  -- Sets qutebrowser as browser
@@ -102,8 +102,9 @@ myStartupHook = do
     spawnOnce "lxsession &"
     spawnOnce "picom &"
     spawnOnce "nm-applet &"
+    spawnOnce "udiskie &"
     spawnOnce "volumeicon &"
-    spawnOnce "conky -c $HOME/.config/conky/xmonad.conkyrc"
+    -- spawnOnce "conky -c $HOME/.config/conky/xmonad.conkyrc"
     spawnOnce "trayer --edge top --align right --widthtype request --padding 6 --SetDockType true --SetPartialStrut true --expand true --monitor 1 --transparent true --alpha 0 --tint 0x282c34  --height 22 &"
     -- spawnOnce "/usr/bin/emacs --daemon &" -- emacs daemon for the emacsclient
     -- spawnOnce "kak -d -s mysession &"  -- kakoune daemon for better performance
@@ -259,8 +260,8 @@ myManageHook = composeAll
      , title =? "Mozilla Firefox"     --> doShift ( myWorkspaces !! 1 )
      , className =? "brave-browser"   --> doShift ( myWorkspaces !! 1 )
      , className =? "qutebrowser"     --> doShift ( myWorkspaces !! 1 )
-     , className =? "mpv"             --> doShift ( myWorkspaces !! 7 )
-     , className =? "Gimp"            --> doShift ( myWorkspaces !! 8 )
+     , className =? "mpv"             --> doShift ( myWorkspaces !! 6 )
+     , className =? "Gimp"            --> doShift ( myWorkspaces !! 7 )
      , className =? "VirtualBox Manager" --> doShift  ( myWorkspaces !! 4 )
      , (className =? "firefox" <&&> resource =? "Dialog") --> doFloat  -- Float Firefox Dialog
      , isFullscreen -->  doFullFloat
@@ -294,7 +295,7 @@ myKeys =
 
     -- Useful programs to have a keybinding for launch
         , ("M-<Return>", spawn (myTerminal))
-        , ("M-b", spawn (myBrowser ++ " www.youtube.com/c/DistroTube/"))
+        , ("M-b", spawn (myBrowser))
         , ("M-M1-h", spawn (myTerminal ++ " -e htop"))
 
     -- Kill windows
@@ -389,7 +390,7 @@ myKeys =
         , ("<XF86AudioMute>", spawn "amixer set Master toggle")
         , ("<XF86AudioLowerVolume>", spawn "amixer set Master 5%- unmute")
         , ("<XF86AudioRaiseVolume>", spawn "amixer set Master 5%+ unmute")
-        , ("<XF86HomePage>", spawn "qutebrowser https://www.youtube.com/c/DistroTube")
+        , ("<XF86HomePage>", spawn "qutebrowser")
         , ("<XF86Search>", spawn "dmsearch")
         , ("<XF86Mail>", runOrRaise "thunderbird" (resource =? "thunderbird"))
         , ("<XF86Calculator>", runOrRaise "qalculate-gtk" (resource =? "qalculate-gtk"))
