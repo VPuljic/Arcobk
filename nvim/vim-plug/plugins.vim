@@ -16,6 +16,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'jiangmiao/auto-pairs'
     " Theme
     Plug 'joshdick/onedark.vim'
+    Plug 'morhetz/gruvbox'
     " Stable version of coc
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     " Ranger plugin 
@@ -36,6 +37,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'junegunn/gv.vim'
     " Which Key
     Plug 'liuchengxu/vim-which-key'
+    " Rainbow parentheses
+    Plug 'junegunn/rainbow_parentheses.vim'
     " Sneak
     Plug 'justinmk/vim-sneak'
     " Sippets with CoC

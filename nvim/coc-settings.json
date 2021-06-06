@@ -9,6 +9,8 @@
   //"snippets.ultisnips.directories":["UltiSnips"],
   "snippets.userSnippetsDirectory":"~/.config/nvim/snips",
 
+  "coc.source.emoji.filetypes": ["markdown"],
+
   // explorer
   "explorer.width": 30,
   "explorer.icon.enableNerdfont": true,
